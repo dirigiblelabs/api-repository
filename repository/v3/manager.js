@@ -69,10 +69,20 @@ function Resource() {
 		return java.invoke(this.uuid, 'isEmpty', []);
 	};
 
-// <!-- TODO See IResource --!>
-
 	this.getContent = function() {
 		return java.invoke(this.uuid, 'getContent', []);
+	};
+
+	this.setContent = function(content) {
+		java.invoke(this.uuid, 'setContent', [content]);
+	};
+
+	this.isBinary = function() {
+		return java.invoke(this.uuid, 'isBinary', []);
+	};
+
+	this.getContentType = function() {
+		return java.invoke(this.uuid, 'getContentType', []);
 	};
 }
 
