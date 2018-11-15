@@ -50,7 +50,7 @@ exports.createCollection = function(path) {
 };
 
 exports.deleteCollection = function(path) {
-	java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'deleteCollection', [path]);
+	java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'deleteResource', [path]);
 };
 
 function Resource() {
