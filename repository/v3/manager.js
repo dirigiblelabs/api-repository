@@ -214,6 +214,6 @@ function EntityInformation() {
 	};
 
 	this.getModifiedAt = function() {
-		return java.invoke(this.uuid, 'getModifiedBy', []);
+		return java.invoke(this.uuid, 'getModifiedAt', []);
 	};
 }
