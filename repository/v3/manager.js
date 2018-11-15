@@ -17,6 +17,42 @@ exports.getResource = function(path) {
 	return resource;
 };
 
+exports.createResource = function(path, content, contentType) {
+	var resourceInstance = java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'createResource', [path, content, contentType], true);
+	var resource = new Resource();
+	resource.uuid = resourceInstance.uuid;
+	return resource;
+};
+
+exports.updateResource = function(path, content) {
+	var resourceInstance = java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'updateResource', [path, content], true);
+	var resource = new Resource();
+	resource.uuid = resourceInstance.uuid;
+	return resource;	
+};
+
+exports.deleteResource = function(path) {
+	java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'deleteResource', [path]);
+};
+
+exports.getCollection = function(path) {
+	var collectionInstnace = java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'getCollection', [path], true);
+	var collection = new Collection();
+	collection.uuid = collectionInstnace.uuid;
+	return collection;
+};
+
+exports.createCollection = function(path) {
+	var collectionInstnace = java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'createCollection', [path], true);
+	var collection = new Collection();
+	collection.uuid = collectionInstnace.uuid;
+	return collection;
+};
+
+exports.deleteCollection = function(path) {
+	java.call('org.eclipse.dirigible.api.v3.repository.RepositoryFacade', 'deleteCollection', [path]);
+};
+
 function Resource() {
 
 	this.getName = function() {
