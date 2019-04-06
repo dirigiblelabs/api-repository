@@ -182,14 +182,14 @@ function Collection() {
 		var collection = new Collection();
 		collection.native = collectionInstance;
 		return collection;
-	}
+	};
 
 	this.getCollection = function(name) {
 		var collectionInstance = this.native.getCollection(name);
 		var collection = new Collection();
 		collection.native = collectionInstance;
 		return collection;
-	}
+	};
 
 	this.removeCollection = function(name) {
 		this.native.removeCollection(name);
