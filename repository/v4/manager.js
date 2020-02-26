@@ -9,6 +9,8 @@
  *   SAP - initial API and implementation
  */
 
+var bytes = require("io/v4/bytes");
+
 exports.getResource = function(path) {
 	var resourceInstance = org.eclipse.dirigible.api.v3.repository.RepositoryFacade.getResource(path);
 	var resource = new Resource();
@@ -102,6 +104,10 @@ function Resource() {
 
 	this.isEmpty = function() {
 		return this.native.isEmpty();
+	};
+
+	this.getText = function() {
+		return bytes.byteArrayToText(this.getContent());
 	};
 
 	this.getContent = function() {
